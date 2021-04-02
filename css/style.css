@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 50%;
+    margin: auto;
+    padding-top: 10%;
+}
+form{
+    margin: auto;
+    padding: 3%;
+    border: 10px solid pink;
+    background-color:lightslategrey;
+    border-radius: 50px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    font-family:Verdana, Tahoma, sans-serif;
+    width: 30%;
+}
+ul{
+    list-style: none;
+    font-size: 20px;
+}
+ul input{
+    display: block;
+    margin: auto;
+    padding: 1%;
+}
+.input{
+    margin-bottom: 5%;
+}
+.button{
+    float: center;
+    padding-top:5%;
+}
+form button:hover{
+    background-color: pink;
+}
+form button{
+    background-color: pink;
+    width: 50%;
+    padding: 3%;
+    border: none;
+    color: white;
+    font-size: 100%;
+}
+#login-link{
+    font-size: 50%;
+    color:white;
+}
+#login-link:hover{
+    color: pink;
+}
