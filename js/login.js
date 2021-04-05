@@ -64,9 +64,7 @@ var results = document.querySelector('.container ul');
 console.log(results);
 
 formExists();
-countFields(4);
-checkRequired("name",true);
+countFields(2);
 checkRequired("email",true);
 checkRequired("password",true);
-checkRequired("repeatPassword",true);
 checkLabels();

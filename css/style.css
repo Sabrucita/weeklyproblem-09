@@ -18,6 +18,7 @@ form{
     text-align: center;
     font-family:Verdana, Tahoma, sans-serif;
     width: 30%;
+    margin-bottom: 7%;
 }
 ul{
     list-style: none;
@@ -52,4 +53,23 @@ form button{
 }
 #login-link:hover{
     color: pink;
+}
+.container{
+    width: 50%;
+    margin: auto;
+    padding: 80px;
+    border: 7px solid pink;
+    background-color: lightslategrey;
+    color: white;
+    font-family: Verdana, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: 500;
+}
+.container-hidden{
+    display: none;
+}
+p{
+    margin-top: 3%;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 15px;
 }
