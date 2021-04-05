@@ -69,6 +69,7 @@ function validationTests(){
 	if(container.textContent == ""){
 		container.innerHTML = "validations results: every validation has passed.";
 	}
+	container.classList.remove("hidden");
 }
 
 formExists();
@@ -78,4 +79,4 @@ checkRequired("email",true);
 checkRequired("password",true);
 checkRequired("repeatPassword",true);
 checkLabels();
-validationTests();
+validationTests()

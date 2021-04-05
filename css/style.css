@@ -65,11 +65,8 @@ form button{
     text-align: center;
     font-weight: 500;
 }
-.container-hidden{
+.hidden{
     display: none;
-}
-.container-block{
-    display: block;
 }
 p{
     margin-top: 3%;
