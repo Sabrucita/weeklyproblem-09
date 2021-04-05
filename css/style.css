@@ -65,11 +65,15 @@ form button{
     text-align: center;
     font-weight: 500;
 }
-.container-hidden{
-    display: none;
-}
+/*.container{
+    visibility: hidden;
+}*/
 p{
     margin-top: 3%;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 15px;
+}
+a{
     font-family: Verdana, Tahoma, sans-serif;
     font-size: 15px;
 }
