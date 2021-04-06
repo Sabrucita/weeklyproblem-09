@@ -1,5 +1,5 @@
 function formExists(){
-	formFound= document.querySelector("form");
+	var formFound= document.querySelector("form");
 	if (formFound == null){
 		console.log("Form doesn't exist");
 		results.innerHTML = "Form doesn't exist. ";
@@ -9,7 +9,7 @@ function formExists(){
 	}
 }
 function countFields(expectedResult){
-	countInput= document.querySelectorAll("form input");
+	var countInput= document.querySelectorAll("form input");
 	if (countInput.length == expectedResult){
 		console.log("Quantity of fields correct");
 		results.innerHTML = results.innerHTML+"<li> Quantity of fields correct. </li>";
@@ -20,7 +20,7 @@ function countFields(expectedResult){
 	}
 }
 function checkRequired(requiredId,required){
-	inputs= document.querySelectorAll("form input");
+	var inputs= document.querySelectorAll("form input");
 	found = false;
 	for (let index = 0; index < inputs.length; index++) {
 		const element = inputs[index];
@@ -41,8 +41,8 @@ function checkRequired(requiredId,required){
 	}
 }
 function checkLabels(){
-	foundInputs = document.querySelectorAll("form input");
-	foundLabels = document.querySelectorAll("form label");
+	var foundInputs = document.querySelectorAll("form input");
+	var foundLabels = document.querySelectorAll("form label");
 	for (let index = 0; index < foundInputs.length; index++) {
 		const id = foundInputs[index].id;
 		found = false;
