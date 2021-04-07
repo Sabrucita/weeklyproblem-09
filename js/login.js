@@ -94,8 +94,17 @@ else{
 results = document.querySelector('.container ul');
 console.log(results);
 
+function validationTests(){
+	var container = document.querySelector('.container');
+	if(container.textContent == ""){
+		container.innerHTML = "validations results: every validation has passed.";
+	}
+	container.classList.remove("hidden");
+}
+
 formExists();
 countFields(2);
 checkRequired("email",true);
 checkRequired("password",true);
 checkLabels();
+validationTests()

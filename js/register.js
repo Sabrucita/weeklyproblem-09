@@ -50,7 +50,6 @@ function checkLabels(){
 }
 results = document.querySelector('.container ul');
 
-
 function validationTests(){
 	var container = document.querySelector('.container');
 	if(container.textContent == ""){
