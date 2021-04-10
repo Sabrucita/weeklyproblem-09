@@ -28,9 +28,11 @@ function repPassFocus(e) {
   }
 
 function nameValidation(e){
+    var expReg = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
+    var esValido = expReg.test(e.target.value);
     var errorMessage = document.querySelector('#nameError');
-    if (e.target.value==""){
-      errorMessage.innerHTML = "Name is required";
+    if (esValido==false){
+      errorMessage.innerHTML = "Full Name is required";
       errorMessage.classList.remove("hidden");
     }
     else{
