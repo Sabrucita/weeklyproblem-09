@@ -1,6 +1,8 @@
 document.getElementById("email").addEventListener("blur", emailValidation);
 document.getElementById("password").addEventListener("blur", passwordValidation);
 
+document.getElementById("submit").addEventListener("click", FormValues);
+
 document.getElementById("email").addEventListener("focus", emailFocus);
 document.getElementById("password").addEventListener("focus", passwordFocus);
 
@@ -38,4 +40,15 @@ function passwordValidation(e){
   else{
     errorMessage.classList.add("hidden");
   }
+}
+
+function FormValues(e){
+	e.preventDefault();
+	var container = document.querySelector('.container');
+	container.innerHTML ="Email: "+document.querySelector('#email').value+
+	"\nPassword: "+document.querySelector('#password').value;
+	fetch('https://jsonplaceholder.typicode.com/users?email='+document.querySelector('#email').value)
+		.then(response => response.json())
+		.then(json => console.log(json))
+	console.log("https://jsonplaceholder.typicode.com/users?email="+document.querySelector('#email').value);
 }

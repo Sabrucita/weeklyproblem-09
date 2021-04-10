@@ -8,9 +8,11 @@ document.getElementById("email").addEventListener("focus", emailFocus);
 document.getElementById("password").addEventListener("focus", passwordFocus);
 document.getElementById("repeatPassword").addEventListener("focus", repPassFocus);
 
+document.getElementById("submit").addEventListener("click", FormValues);
+
 function nameFocus(e) {
-    var errorMessage = document.querySelector('#nameError');
-    errorMessage.classList.add("hidden");
+	var errorMessage = document.querySelector('#nameError');
+	errorMessage.classList.add("hidden");
   }
 
 function emailFocus(e) {
@@ -23,21 +25,21 @@ function passwordFocus(e) {
   errorMessage.classList.add("hidden");
 }
 function repPassFocus(e) {
-    var errorMessage = document.querySelector('#repPassError');
-    errorMessage.classList.add("hidden");
+	var errorMessage = document.querySelector('#repPassError');
+	errorMessage.classList.add("hidden");
   }
 
 function nameValidation(e){
-    var expReg = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
-    var esValido = expReg.test(e.target.value);
-    var errorMessage = document.querySelector('#nameError');
-    if (esValido==false){
-      errorMessage.innerHTML = "Full Name is required";
-      errorMessage.classList.remove("hidden");
-    }
-    else{
-      errorMessage.classList.add("hidden");
-    }
+	var expReg = /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
+	var esValido = expReg.test(e.target.value);
+	var errorMessage = document.querySelector('#nameError');
+	if (esValido==false){
+	  errorMessage.innerHTML = "Full Name is required";
+	  errorMessage.classList.remove("hidden");
+	}
+	else{
+	  errorMessage.classList.add("hidden");
+	}
   }
 
 function emailValidation(e){
@@ -45,11 +47,11 @@ function emailValidation(e){
   var esValido = expReg.test(e.target.value);
   var errorMessage = document.querySelector('#emailError');
   if (esValido==false){
-    errorMessage.innerHTML = "The email adress is invalid";
-    errorMessage.classList.remove("hidden");
+	errorMessage.innerHTML = "The email adress is invalid";
+	errorMessage.classList.remove("hidden");
   }
   else{
-    errorMessage.classList.add("hidden");
+	errorMessage.classList.add("hidden");
   }
 }
 
@@ -58,20 +60,33 @@ function passwordValidation(e){
   var esValido = expReg.test(e.target.value);
   var errorMessage = document.querySelector('#passwordError');
   if (esValido==false){
-    errorMessage.innerHTML = "The password is invalid, it must have numbers and letters";
-    errorMessage.classList.remove("hidden");
+	errorMessage.innerHTML = "The password is invalid, it must have numbers and letters";
+	errorMessage.classList.remove("hidden");
   }
   else{
-    errorMessage.classList.add("hidden");
+	errorMessage.classList.add("hidden");
   }
 }
 
 function repPassValidation(e){
-    var errorMessage = document.querySelector('#repPassError');
-    if(e.target.value == document.querySelector('#password').value){
-        errorMessage.classList.add("hidden");
-    }else{
-        errorMessage.innerHTML = "The password is invalid";
-        errorMessage.classList.remove("hidden");
-    }
+	var errorMessage = document.querySelector('#repPassError');
+	if(e.target.value == document.querySelector('#password').value){
+		errorMessage.classList.add("hidden");
+	}else{
+		errorMessage.innerHTML = "The password is invalid";
+		errorMessage.classList.remove("hidden");
+	}
+}
+
+function FormValues(e){
+	e.preventDefault();
+	var container = document.querySelector('.container');
+	container.innerHTML = "Name: "+document.querySelector('#name').value+
+	"\nEmail: "+document.querySelector('#email').value+
+	"\nPassword: "+document.querySelector('#password').value+
+	"\nRepeat Password: "+document.querySelector('#repeatPassword').value;
+	fetch('https://jsonplaceholder.typicode.com/users?email='+document.querySelector('#email').value)
+		.then(response => response.json())
+		.then(json => console.log(json))
+	console.log("https://jsonplaceholder.typicode.com/users?email="+document.querySelector('#email').value);
 }
