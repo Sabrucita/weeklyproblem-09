@@ -65,6 +65,13 @@ form button{
     text-align: center;
     font-weight: 500;
 }
+.error-message{
+    color: pink;
+    font-family: Verdana, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 15px;
+    padding-bottom: 17px;
+}
 .hidden{
     display: none;
 }
